@@ -1,14 +1,21 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400..900&family=Jersey+15&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Play:wght@400;700&family=Rubik+Vinyl&family=Tektur:wght@400..900&display=swap');
-*{
+
+
+* {
   margin: 0;
   padding: 0;
 }
-body{
+body {
   background-color: #111d29;
 }
-.active{
+.active {
   background-color: #003364;
-  padding: 7px;
+  
   border-radius: 10px;
+
+}
+.clashover:hover{
+  background-color: blue;
+   border-radius: 10px;
+  
 }
