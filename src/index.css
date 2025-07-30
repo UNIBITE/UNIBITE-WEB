@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-
+/* 
 * {
   margin: 0;
   padding: 0;
@@ -19,3 +19,33 @@ body {
    border-radius: 10px;
   
 }
+
+.card1:hover .linestyle {
+  width: 290px;
+  transition: width 0.3s ease;
+}
+
+.linestyle {
+  height: 4px;
+  width: 10px;
+  background-color: rgb(229, 25, 25);
+  transition: width 0.3s ease;
+}
+
+.card1{
+  border: 5px solid #ff9b05;
+  border-radius: 12px;
+  box-shadow: 5px 4px 1px 2px #00000052;
+}
+
+.iconebox{
+  height: 120px;
+  width: 120px;
+  background-color: #ff9b05;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  border-radius: 50%;
+
+} */
