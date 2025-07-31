@@ -5,7 +5,7 @@ const MealversityLandingPage = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
             {/* Header */}
-            <header className="px-6 py-4 flex items-center justify-between">
+            <header className="px-6 py-4 gap-[15px] flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex items-center space-x-3">
                     <div className="w-12 h-12 bg-slate-800 rounded-[50%] flex items-center justify-center">
@@ -15,7 +15,7 @@ const MealversityLandingPage = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-full font-semibold transition-colors duration-300 shadow-lg cursor-pointer">
+                <button className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-full font-semibold transition-colors duration-300 shadow-lg cursor-pointer md:text-xl text-[10px]">
                     Download App
                 </button>
             </header>
@@ -55,13 +55,13 @@ const MealversityLandingPage = () => {
             </main>
 
             {/* Mobile Menu Button (Hidden by default) */}
-            <div className="md:hidden fixed top-4 right-4">
+            {/* <div className="md:hidden fixed top-4 right-4">
                 <button className="p-2 bg-white rounded-lg shadow-md">
                     <div className="w-6 h-1 bg-slate-800 mb-1"></div>
                     <div className="w-6 h-1 bg-slate-800 mb-1"></div>
                     <div className="w-6 h-1 bg-slate-800"></div>
                 </button>
-            </div>
+            </div> */}
 
         </div>
     )
