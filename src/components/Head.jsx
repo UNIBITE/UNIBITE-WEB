@@ -63,16 +63,6 @@ const MealversityLandingPage = () => {
                 </button>
             </div>
 
-            <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(12deg); }
-          50% { transform: translateY(-10px) rotate(12deg); }
-        }
-        
-        .floating-plate {
-          animation: float 3s ease-in-out infinite;
-        }
-      `}</style>
         </div>
     )
 }

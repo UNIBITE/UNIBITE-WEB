@@ -17,7 +17,7 @@ export default function ProblemsSection() {
           <div className="inline-block relative">
             <h2 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-slate-800 animate-pulse relative">
               Are you tired of..
-              <span className="ml-4 text-6xl text-slate-700">😩</span>
+              <span className="ml-4 text-6xl text-slate-700"></span>
             </h2>
             {/* Decorative underline */}
             <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-teal-500 to-orange-500 rounded-full animate-pulse"></div>
@@ -28,7 +28,7 @@ export default function ProblemsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {[
             { text: "Eating oily restaurant food every day?", delay: "200", icon: "🍔" },
-            { text: "Mess food that's either late or tasteless?", delay: "400", icon: "😖" },
+            { text: "Mess food that's either late or tasteless?", delay: "400", icon: "🎈" },
             { text: "No time to cook during classes or work?", delay: "600", icon: "⏰" },
             { text: "Spending ₹5000–₹7000/month on unhealthy food?", delay: "800", icon: "💸" }
           ].map((problem, index) => (
@@ -80,18 +80,6 @@ export default function ProblemsSection() {
       </div>
       
       {/* Custom keyframes styles */}
-      <style jsx>{`
-        @keyframes slideInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </div>
   );
 }

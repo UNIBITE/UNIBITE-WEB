@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useRef } from 'react'
 import { 
   Smartphone, 
   Download, 
@@ -14,10 +14,12 @@ import {
 } from 'lucide-react'
 
 const AppComingSoonContact = () => {
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyLq5IQ7CLAfy4sfHp2p5Gwlrp4N4HsczYCzEVdK6DgrR-bNbCYpZgbHRNhFttTR0erXA/exec'
+  const form = useRef()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
+    Phone: '',
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -31,25 +33,39 @@ const AppComingSoonContact = () => {
     }));
   };
 
-  const handleSubmit = () => {
-    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
-      return;
-    }
-    
+  const handleSubmit = (e) => {
+  e.preventDefault();
+      setIsLoading(true);
+  if (!formData.name || !formData.email || !formData.Phone || !formData.message) {
     setIsLoading(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsLoading(false);
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', phone: '', message: '' });
-      
-      // Reset success message after 3 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 3000);
-    }, 1000);
-  };
+    return;
+  }
+  
+  console.log(formData);
+  
+  // Create FormData and append your data manually
+  const form = new FormData();
+  form.append('name', formData.name);
+  form.append('email', formData.email);
+  form.append('Phone', formData.Phone);
+  form.append('message', formData.message);
+  
+  fetch(scriptURL, { 
+    method: 'POST', 
+    body: form  // Use the FormData object
+  })
+  .then(response => {
+    setIsLoading(false);
+    setIsSubmitted(true);
+    setFormData({ name: '', email: '', Phone: '', message: '' });
+  })
+  .catch(error => console.error('Error!', error.message));
+  
+  // Simulate form submission
+  setTimeout(() => {
+    setIsSubmitted(false);
+  }, 3000);
+};
 
   return (
     <div className="py-20 px-4 bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300">
@@ -216,9 +232,9 @@ const AppComingSoonContact = () => {
                 <div className="relative">
                   <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-500" size={20} />
                   <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
+                    type="text"
+                    name="Phone"
+                    value={formData.Phone}
                     onChange={handleInputChange}
                     placeholder="Phone Number"
                     className="w-full pl-12 pr-4 py-4 bg-white/70 backdrop-blur-md border border-slate-300/50 rounded-xl text-slate-800 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300"
@@ -252,7 +268,7 @@ const AppComingSoonContact = () => {
 
               <button
                 onClick={handleSubmit}
-                disabled={isLoading || !formData.name || !formData.email || !formData.phone || !formData.message}
+                disabled={isLoading || !formData.name || !formData.email || !formData.Phone || !formData.message}
                 className="w-full py-4 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 disabled:from-slate-400 disabled:to-slate-500 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
               >
                 {isLoading ? (
