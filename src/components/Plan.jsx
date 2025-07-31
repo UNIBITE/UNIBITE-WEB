@@ -8,7 +8,7 @@ const MembershipPlans = () => {
     {
       id: 'daily',
       type: 'Daily Flexi',
-      price: '₹60',
+      price: '₹X9',
       period: 'per meal',
       meals: 'As needed',
       bestFor: 'Try before subscribing',
@@ -28,7 +28,7 @@ const MembershipPlans = () => {
     {
       id: 'weekly',
       type: 'Weekly Saver',
-      price: '₹399',
+      price: '₹XX9',
       period: 'per week',
       meals: '10 meals',
       bestFor: 'Students & interns',
@@ -48,7 +48,7 @@ const MembershipPlans = () => {
     {
       id: 'monthly',
       type: 'Monthly Smart',
-      price: '₹1499',
+      price: '₹XXX9',
       period: 'per month',
       meals: '40+ meals',
       bestFor: 'Full-time meal users',

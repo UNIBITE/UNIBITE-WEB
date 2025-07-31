@@ -166,7 +166,7 @@ const AppComingSoonContact = () => {
                 {
                   icon: Phone,
                   title: 'Call Us',
-                  info: '+91 8918371536',
+                  info: '+91 8900099783',
                   subtitle: 'Mon-Sat, 9 AM - 8 PM',
                   color: 'from-teal-500 to-teal-600'
                 },

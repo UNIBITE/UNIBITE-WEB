@@ -88,19 +88,6 @@ export default function HomePage() {
       </div>
 
       {/* Hero Section */}
-      <div className="relative z-10 py-20 px-4">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-800/10 to-transparent"></div>
-        <div className="relative z-20">
-          <h1 className="text-6xl md:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-600 via-teal-700 to-teal-800 text-center mb-6 drop-shadow-2xl animate-fadeInUp">
-            MEALVERSITY
-          </h1>
-          <div className="flex justify-center">
-            <TypeAnimation 
-              className="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-teal-700 text-center min-h-[60px] animate-fadeInUp animation-delay-500"
-            />
-          </div>
-        </div>
-      </div>
 
       {/* Problems Section */}
       <ProblemsSection/>
