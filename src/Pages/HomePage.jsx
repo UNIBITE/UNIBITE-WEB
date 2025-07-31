@@ -5,7 +5,6 @@ import MealversityLandingPage from "../components/Head"
 import MembershipPlans from '../components/Plan';
 import AppComingSoonContact from '../components/Conatct';
 import ProblemsSection from '../components/Problem';
-import TeamSection from '../components/Team';
 const useIntersectionObserver = (options = {}) => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -44,7 +43,7 @@ const TypeAnimation = ({ text, className, style }) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  
+
   const texts = [
     'Your Daily Meals',
     'Your Daily Meals, Delivered Smartly.'
@@ -80,7 +79,7 @@ export default function HomePage() {
   return (
 
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 overflow-hidden">
-      <MealversityLandingPage/>
+      <MealversityLandingPage />
       {/* Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
@@ -91,7 +90,7 @@ export default function HomePage() {
       {/* Hero Section */}
 
       {/* Problems Section */}
-      <ProblemsSection/>
+      <ProblemsSection />
 
 
       {/* Promise Section */}
@@ -101,7 +100,7 @@ export default function HomePage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <div className="bg-gradient-to-r from-orange-100/80 to-yellow-100/80 backdrop-blur-md border-4 border-dashed border-teal-500 rounded-3xl p-8 shadow-2xl">
-                <p className="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-slate-800 animate-fadeInUp" style={{fontFamily:"Cinzel"}}>
+                <p className="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-slate-800 animate-fadeInUp" style={{ fontFamily: "Cinzel" }}>
                   Mealversity gives you fresh, simple, tasty, and healthy meals every single day—without the mess.
                   Whether you're a student, intern, or office-goer, you'll love our.
                 </p>
@@ -145,7 +144,7 @@ export default function HomePage() {
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <div className="text-center">
-                    <p className={`text-xl font-bold ${card.textColor} mb-6 leading-tight`} style={{fontFamily:"Play"}}>
+                    <p className={`text-xl font-bold ${card.textColor} mb-6 leading-tight`} style={{ fontFamily: "Play" }}>
                       {card.title}
                     </p>
                     <div className={`inline-flex p-4 rounded-full bg-gradient-to-r ${card.color} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
@@ -158,16 +157,14 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-<div>
-  <MembershipPlans/>
-</div>
-<div>
-  <AppComingSoonContact/>
-</div>
-<div>
-  <TeamSection/>
-</div>
-<MealversityFooter/>
+      <div>
+        <MembershipPlans />
+      </div>
+      <div>
+        <AppComingSoonContact />
+      </div>
+      
+      <MealversityFooter />
     </div>
   )
 }

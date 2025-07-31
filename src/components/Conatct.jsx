@@ -1,9 +1,10 @@
-import React, { useState,useRef } from 'react'
-import { 
-  Smartphone, 
-  Download, 
-  MessageCircle, 
-  Truck, 
+import React, { useState, useRef } from 'react'
+import TeamSection from "../components/Team"
+import {
+  Smartphone,
+  Download,
+  MessageCircle,
+  Truck,
   Calendar,
   Mail,
   Phone,
@@ -34,47 +35,47 @@ const AppComingSoonContact = () => {
   };
 
   const handleSubmit = (e) => {
-  e.preventDefault();
-      setIsLoading(true);
-  if (!formData.name || !formData.email || !formData.Phone || !formData.message) {
+    e.preventDefault();
     setIsLoading(true);
-    return;
-  }
-  
-  console.log(formData);
-  
-  // Create FormData and append your data manually
-  const form = new FormData();
-  form.append('name', formData.name);
-  form.append('email', formData.email);
-  form.append('Phone', formData.Phone);
-  form.append('message', formData.message);
-  
-  fetch(scriptURL, { 
-    method: 'POST', 
-    body: form  // Use the FormData object
-  })
-  .then(response => {
-    setIsLoading(false);
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', Phone: '', message: '' });
-  })
-  .catch(error => console.error('Error!', error.message));
-  
-  // Simulate form submission
-  setTimeout(() => {
-    setIsSubmitted(false);
-  }, 3000);
-};
+    if (!formData.name || !formData.email || !formData.Phone || !formData.message) {
+      setIsLoading(true);
+      return;
+    }
+
+    console.log(formData);
+
+    // Create FormData and append your data manually
+    const form = new FormData();
+    form.append('name', formData.name);
+    form.append('email', formData.email);
+    form.append('Phone', formData.Phone);
+    form.append('message', formData.message);
+
+    fetch(scriptURL, {
+      method: 'POST',
+      body: form  // Use the FormData object
+    })
+      .then(response => {
+        setIsLoading(false);
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', Phone: '', message: '' });
+      })
+      .catch(error => console.error('Error!', error.message));
+
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitted(false);
+    }, 3000);
+  };
 
   return (
     <div className="py-20 px-4 bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* App Coming Soon Section */}
         <div className="text-center mb-20">
           <div className="bg-gradient-to-r from-teal-100/80 to-orange-100/80 backdrop-blur-md border-2 border-dashed border-teal-400 rounded-3xl p-12 shadow-2xl max-w-4xl mx-auto">
-            
+
             {/* Header */}
             <div className="flex items-center justify-center space-x-3 mb-8">
               <div className="p-4 bg-gradient-to-r from-teal-500 to-teal-600 rounded-2xl shadow-lg animate-bounce">
@@ -91,7 +92,7 @@ const AppComingSoonContact = () => {
                 <div className="text-2xl">📦</div>
                 <span className="text-xl font-semibold text-slate-700">Download App on:</span>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-6">
                 {/* Google Play Store */}
                 <div className="bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-900 hover:to-black text-white px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group flex items-center space-x-3 min-w-[200px]">
@@ -143,15 +144,17 @@ const AppComingSoonContact = () => {
             </div>
 
             <p className="text-slate-600 text-lg">
-              Get ready for the ultimate meal ordering experience with real-time tracking, 
+              Get ready for the ultimate meal ordering experience with real-time tracking,
               flexible meal management, and direct communication with your delivery team.
             </p>
           </div>
         </div>
-
+        <div style={{ marginBottom: "30px" }}>
+          <TeamSection />
+        </div>
         {/* Contact Form Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          
+
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
@@ -218,7 +221,7 @@ const AppComingSoonContact = () => {
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="relative">
-                  <User style={{color:"black"}} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-500" size={20} />
+                  <User style={{ color: "black" }} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-500" size={20} />
                   <input
                     type="text"
                     name="name"
@@ -228,7 +231,7 @@ const AppComingSoonContact = () => {
                     className="w-full pl-12 pr-4 py-4 bg-white/70 backdrop-blur-md border border-slate-300/50 rounded-xl text-slate-800 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300"
                   />
                 </div>
-                
+
                 <div className="relative">
                   <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-500" size={20} />
                   <input
@@ -284,6 +287,7 @@ const AppComingSoonContact = () => {
           </div>
         </div>
       </div>
-          </div>
-)}
+    </div>
+  )
+}
 export default AppComingSoonContact;

@@ -33,7 +33,7 @@ const TeamSection = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-50 to-cyan-50 py-16 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-sky-50 to-cyan-50 py-16 px-4  rounded-4xl">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
