@@ -5,6 +5,7 @@ import MealversityLandingPage from "../components/Head"
 import MembershipPlans from '../components/Plan';
 import AppComingSoonContact from '../components/Conatct';
 import ProblemsSection from '../components/Problem';
+import TeamSection from '../components/Team';
 const useIntersectionObserver = (options = {}) => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -162,6 +163,9 @@ export default function HomePage() {
 </div>
 <div>
   <AppComingSoonContact/>
+</div>
+<div>
+  <TeamSection/>
 </div>
 <MealversityFooter/>
     </div>

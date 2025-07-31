@@ -80,17 +80,19 @@ export default function MealversityFooter() {
                 {/* Social Media */}
                 <div className="flex space-x-4">
                   {[
-                    { icon: Facebook, color: 'hover:text-teal-600' },
-                    { icon: Twitter, color: 'hover:text-teal-600' },
-                    { icon: Instagram, color: 'hover:text-teal-600' },
-                    { icon: Linkedin, color: 'hover:text-teal-600' }
+                    { icon: Facebook, color: 'hover:text-teal-600',link:"https://www.facebook.com/share/16oUPtaFKG/" },
+                    { icon: Twitter, color: 'hover:text-teal-600',link:"https://x.com/meal_versity?t=T62Io8NyKmQAro2tXf1EdQ&s=08" },
+                    { icon: Instagram, color: 'hover:text-teal-600',link:"https://www.instagram.com/mealversity.in?igsh=MWtwNHlsaGszemcyZA==" },
+                    { icon: Linkedin, color: 'hover:text-teal-600',link:"https://www.linkedin.com/in/meal-versity-720aa7377/" }
                   ].map((social, index) => (
+                    <a href={social.link} target='_blank' key={index}>
                     <div
-                      key={index}
+                      
                       className={`p-3 bg-gradient-to-br from-white/60 to-white/40 backdrop-blur-md rounded-full border border-slate-300/50 ${social.color} text-slate-600 hover:scale-110 transition-all duration-300 cursor-pointer group shadow-md`}
                     >
                       <social.icon size={20} className="group-hover:animate-bounce" />
                     </div>
+                    </a>
                   ))}
                 </div>
               </div>

@@ -1,36 +1,36 @@
 import React, { useState } from 'react'
-import { Check, Star, Clock, Users, Zap, Shield } from 'lucide-react'
+import { Check, Star, Clock, Users, Zap, Shield, User } from 'lucide-react'
 
 const MembershipPlans = () => {
   const [hoveredPlan, setHoveredPlan] = useState(null);
 
   const plans = [
-    {
-      id: 'daily',
-      type: 'Daily Flexi',
-      price: '₹X9',
-      period: 'per meal',
-      meals: 'As needed',
-      bestFor: 'Try before subscribing',
-      icon: Clock,
-      color: 'from-orange-500 to-orange-600',
-      bgColor: 'from-orange-100/60 to-orange-200/60',
-      borderColor: 'border-orange-300',
-      features: [
-        'Pay per meal',
-        'No commitment',
-        'Perfect for testing',
-        'Same quality food',
-        'Flexible timing'
-      ],
-      popular: false
-    },
+    // {
+    //   id: 'daily',
+    //   type: 'Daily Flexi',
+    //   price: '₹X9',
+    //   period: 'per meal',
+    //   meals: 'As needed',
+    //   bestFor: 'Try before subscribing',
+    //   icon: Clock,
+    //   color: 'from-orange-500 to-orange-600',
+    //   bgColor: 'from-orange-100/60 to-orange-200/60',
+    //   borderColor: 'border-orange-300',
+    //   features: [
+    //     'Pay per meal',
+    //     'No commitment',
+    //     'Perfect for testing',
+    //     'Same quality food',
+    //     'Flexible timing'
+    //   ],
+    //   popular: false
+    // },
     {
       id: 'weekly',
       type: 'Weekly Saver',
       price: '₹XX9',
       period: 'per week',
-      meals: '10 meals',
+      meals: '14 meals',
       bestFor: 'Students & interns',
       icon: Users,
       color: 'from-teal-500 to-teal-600',
@@ -45,26 +45,107 @@ const MembershipPlans = () => {
       ],
       popular: true
     },
+        {
+      id: 'weekly',
+      type: 'Weekly Saver (Lunch Only)',
+      price: '₹XX9',
+      period: 'per week',
+      meals: '7 meals/week',
+      bestFor: 'Students with night meals at home,',
+      icon: User,
+      color: 'from-teal-500 to-teal-600',
+      bgColor: 'from-teal-100/60 to-teal-200/60',
+      borderColor: 'border-teal-300',
+      features: [
+        ' Fills the energy gap during day',
+        'Maximum savings',
+        'Priority delivery',
+        'Affordable & time-saving',
+        'Keeps focus strong through afternoon'
+      ],
+      popular: false
+    },
+        {
+      id: 'weekly',
+      type: 'Weekly Saver (Dinner Only)',
+      price: '₹XX9',
+      period: 'per week',
+      meals: '7 meals/week',
+      bestFor: 'Students returning late from college/work,Daytime food outside, homely dinner need',
+      icon: Users,
+      color: 'from-teal-500 to-teal-600',
+      bgColor: 'from-teal-100/60 to-teal-200/60',
+      borderColor: 'border-teal-300',
+      features: [
+        'Light, homely food at night',
+        'Avoids junk food at night',
+        'Maximum savings',
+        'Priority delivery',
+        'Saves cooking hassle after a long day'
+      ],
+      popular: false
+    },
     {
       id: 'monthly',
-      type: 'Monthly Smart',
+      type: 'Monthly Ultra Saver',
       price: '₹XXX9',
       period: 'per month',
-      meals: '40+ meals',
-      bestFor: 'Full-time meal users',
+      meals: ' 56 meals/month',
+      bestFor: 'Long-term hostellers/interns',
       icon: Zap,
       color: 'from-yellow-500 to-yellow-600',
       bgColor: 'from-yellow-100/60 to-yellow-200/60',
       borderColor: 'border-yellow-300',
       features: [
-        '40+ meals monthly',
-        'Maximum savings',
-        'Priority delivery',
+        'More savings than weekly',
+        'No need to renew every week',
+        'Ideal for long schedules & consistency',
+        'Monthly peace of mind',
+        'Dedicated support'
+      ],
+      popular: true
+    },
+    {
+      id: 'monthly',
+      type: ' Monthly (Lunch Only)',
+      price: '₹XXX9',
+      period: 'per month',
+      meals: ' 28 meals/month',
+      bestFor: ' Students with dinner at home',
+      icon: Zap,
+      color: 'from-yellow-500 to-yellow-600',
+      bgColor: 'from-yellow-100/60 to-yellow-200/60',
+      borderColor: 'border-yellow-300',
+      features: [
+        'Keeps you energetic daily',
+        'Monthly savings vs daily/weekly',
+        'Simple, light, timely lunch every day',
         'Custom meal plans',
         'Dedicated support'
       ],
       popular: false
-    }
+    },
+    {
+      id: 'monthly',
+      type: ' Monthly (Dinner Only)',
+      price: '₹XXX9',
+      period: 'per month',
+      meals: ' 28 meals/month',
+      bestFor: 'Those looking for homely dinner',
+      icon: Zap,
+      color: 'from-yellow-500 to-yellow-600',
+      bgColor: 'from-yellow-100/60 to-yellow-200/60',
+      borderColor: 'border-yellow-300',
+      features: [
+        'Healthy closure to the day',
+        'Monthly savings vs daily/weekly',
+        'Simple, light, timely lunch every day',
+        'Monthly peace of mind',
+        'Saves ordering junk food'
+      ],
+      popular: false
+    },
+
   ];
 
   return (
@@ -81,7 +162,7 @@ const MembershipPlans = () => {
             </h2>
           </div>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Choose the perfect meal plan that fits your lifestyle and budget. 
+            Choose the perfect meal plan that fits your lifestyle and budget.
             All plans include fresh, healthy meals delivered on time.
           </p>
           <div className="mt-4 inline-flex items-center space-x-2 bg-gradient-to-r from-orange-100 to-yellow-100 px-4 py-2 rounded-full border border-orange-200">
@@ -96,9 +177,8 @@ const MembershipPlans = () => {
             return (
               <div
                 key={plan.id}
-                className={`relative bg-gradient-to-br ${plan.bgColor} backdrop-blur-md rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer border-2 ${plan.borderColor} group ${
-                  plan.popular ? 'ring-4 ring-teal-200 ring-opacity-50' : ''
-                }`}
+                className={`relative bg-gradient-to-br ${plan.bgColor} backdrop-blur-md rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer border-2 ${plan.borderColor} group ${plan.popular ? 'ring-4 ring-teal-200 ring-opacity-50' : ''
+                  }`}
                 onMouseEnter={() => setHoveredPlan(plan.id)}
                 onMouseLeave={() => setHoveredPlan(null)}
                 style={{ animationDelay: `${index * 200}ms` }}
@@ -118,11 +198,11 @@ const MembershipPlans = () => {
                   <div className={`inline-flex p-4 rounded-full bg-gradient-to-r ${plan.color} shadow-lg group-hover:scale-110 transition-transform duration-300 mb-4`}>
                     <IconComponent size={32} className="text-white" />
                   </div>
-                  
+
                   <h3 className="text-2xl font-bold text-slate-800 mb-2">
                     {plan.type}
                   </h3>
-                  
+
                   <div className="mb-4">
                     <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-slate-800">
                       {plan.price}
@@ -164,9 +244,8 @@ const MembershipPlans = () => {
 
                 {/* CTA Button */}
                 <button
-                  className={` cursor-pointer w-full py-4 bg-gradient-to-r ${plan.color} hover:opacity-90 text-white font-bold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform ${
-                    hoveredPlan === plan.id ? 'scale-105' : ''
-                  }`}
+                  className={` cursor-pointer w-full py-4 bg-gradient-to-r ${plan.color} hover:opacity-90 text-white font-bold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform ${hoveredPlan === plan.id ? 'scale-105' : ''
+                    }`}
                 >
                   {plan.id === 'daily' ? 'Order Now' : 'Choose Plan'}
                 </button>
@@ -182,8 +261,13 @@ const MembershipPlans = () => {
               </div>
             );
           })}
+         
         </div>
+        <div className='flex items-center justify-center flex-col'>
+          <h1 className='text-2xl font-bold text-slate-800 mb-2'>For daily</h1>
+ <button style={{marginBottom:"19px",width:"300px"}} className=" border-teal-300  to-teal-600c from-orange-500 to-orange-500 cursor-pointer w-full py-4 bg-gradient-to-r  hover:opacity-90 text-white font-bold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform scale-105">Order Now</button>
 
+        </div>
         {/* Additional Info */}
         <div className="text-center">
           <div className="bg-gradient-to-r from-teal-100/80 to-orange-100/80 backdrop-blur-md border-2 border-dashed border-teal-300 rounded-3xl p-8 shadow-xl max-w-4xl mx-auto">
@@ -208,7 +292,7 @@ const MembershipPlans = () => {
               </div>
             </div>
             <p className="text-slate-600 mt-4 text-sm">
-              Can't decide? Start with Daily Flexi and upgrade anytime! 
+              Can't decide? Start with Daily Flexi and upgrade anytime!
               <span className="font-semibold text-teal-600">No hidden charges.</span>
             </p>
           </div>
