@@ -28,7 +28,7 @@ const MealversityLandingPage = () => {
                     <div className="space-y-8">
                         <div>
                             <h2 className="text-5xl md:text-6xl font-bold text-slate-800 leading-tight mb-6">
-                                A new startup for hostel and meal services
+                                A platform for hostel and meal services
                             </h2>
                             <p className="text-xl text-slate-600 leading-relaxed mb-8">
                                 We provide comfortable hostel accommodation and tasty meals for students and bachelors.
