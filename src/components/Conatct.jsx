@@ -13,6 +13,7 @@ import {
   Send,
   CheckCircle
 } from 'lucide-react'
+import FAQSection from './FandQ'
 
 const AppComingSoonContact = () => {
   const scriptURL = 'https://script.google.com/macros/s/AKfycbyLq5IQ7CLAfy4sfHp2p5Gwlrp4N4HsczYCzEVdK6DgrR-bNbCYpZgbHRNhFttTR0erXA/exec'
@@ -151,6 +152,9 @@ const AppComingSoonContact = () => {
         </div>
         <div style={{ marginBottom: "30px" }}>
           <TeamSection />
+        </div>
+        <div style={{ marginBottom: "30px" }}>
+          <FAQSection/>
         </div>
         {/* Contact Form Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
