@@ -40,7 +40,7 @@ const MealversityLandingPage = () => {
                               Download App
                             </button>
                             <p className="text-slate-600 text-lg">
-                                Our app Wil be launching in September 2025
+                                Our app Will be launching in September 2025
                             </p>
                         </div>
                     </div>
