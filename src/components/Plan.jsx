@@ -176,7 +176,7 @@ const MembershipPlans = () => {
             const IconComponent = plan.icon;
             return (
               <div
-                key={plan.id}
+                key={index}
                 className={`relative bg-gradient-to-br ${plan.bgColor} backdrop-blur-md rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer border-2 ${plan.borderColor} group ${plan.popular ? 'ring-4 ring-teal-200 ring-opacity-50' : ''
                   }`}
                 onMouseEnter={() => setHoveredPlan(plan.id)}
