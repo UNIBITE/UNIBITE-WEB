@@ -10,14 +10,14 @@ const TeamSection = () => {
       id: 1
     },
     {
-      name: "Muklesur Rchaman", 
+      name: "Muklesur Rahaman", 
       role: "Co-Founder & COO",
       description: "Responsible for daily operations, food preparation, delivery systems, and host partnerships.",
       avatar: "MR",
       id: 2
     },
     {
-      name: "Asif Ahamed",
+      name: "Asif Ahmed",
       role: "Co-Founder & CTO", 
       description: "Leads development of the Mealversity app and web platform.",
       avatar: "AA",
