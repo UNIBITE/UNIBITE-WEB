@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import picformela from "../assets/picformale.png"
-import icone from "../assets/icone.jpeg"
+import icone from "../../favicon.png"
 const MealversityLandingPage = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
