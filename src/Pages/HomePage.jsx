@@ -163,8 +163,10 @@ export default function HomePage() {
       <div>
         <AppComingSoonContact />
       </div>
-      
+      <div>
+
       <MealversityFooter />
+      </div>
     </div>
   )
 }
