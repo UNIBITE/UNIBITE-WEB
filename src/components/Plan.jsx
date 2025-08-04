@@ -149,7 +149,7 @@ const MembershipPlans = () => {
   ];
 
   return (
-    <div className="py-20 px-4 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
+    <div id='plan' className="py-20 px-4 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">

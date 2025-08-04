@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Facebook, 
-  Twitter, 
-  Instagram, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
   Linkedin,
   Heart,
   Clock,
@@ -16,8 +16,9 @@ import {
 } from 'lucide-react'
 
 const FloatingIcon = ({ children, delay = 0 }) => {
+
   return (
-    <div 
+    <div
       className="floating-icon"
       style={{ animationDelay: `${delay}ms` }}
     >
@@ -29,7 +30,11 @@ const FloatingIcon = ({ children, delay = 0 }) => {
 export default function MealversityFooter() {
   const [email, setEmail] = useState('');
   const [isHovered, setIsHovered] = useState(false);
-
+const handleclick = (id) => {
+  document.querySelector(id)?.scrollIntoView({
+    behavior: 'smooth'
+  });
+};
   const handleSubscribe = (e) => {
     e.preventDefault();
     // Handle newsletter subscription
@@ -64,7 +69,7 @@ export default function MealversityFooter() {
         <div className="bg-gradient-to-r from-slate-800/10 to-transparent backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-4 py-16">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-              
+
               {/* Brand Section */}
               <div className="space-y-6 animate-fadeInUp">
                 <div>
@@ -72,26 +77,26 @@ export default function MealversityFooter() {
                     Mealversity
                   </h3>
                   <p className="text-slate-700 leading-relaxed">
-                    Fresh, healthy, and delicious meals delivered right to your doorstep. 
+                    Fresh, healthy, and delicious meals delivered right to your doorstep.
                     Your trusted partner for daily nutrition and convenience.
                   </p>
                 </div>
-                
+
                 {/* Social Media */}
                 <div className="flex space-x-4">
                   {[
-                    { icon: Facebook, color: 'hover:text-teal-600',link:"https://www.facebook.com/share/16oUPtaFKG/" },
-                    { icon: Twitter, color: 'hover:text-teal-600',link:"https://x.com/meal_versity?t=T62Io8NyKmQAro2tXf1EdQ&s=08" },
-                    { icon: Instagram, color: 'hover:text-teal-600',link:"https://www.instagram.com/mealversity.in?igsh=MWtwNHlsaGszemcyZA==" },
-                    { icon: Linkedin, color: 'hover:text-teal-600',link:"https://www.linkedin.com/in/meal-versity-720aa7377/" }
+                    { icon: Facebook, color: 'hover:text-teal-600', link: "https://www.facebook.com/share/16oUPtaFKG/" },
+                    { icon: Twitter, color: 'hover:text-teal-600', link: "https://x.com/meal_versity?t=T62Io8NyKmQAro2tXf1EdQ&s=08" },
+                    { icon: Instagram, color: 'hover:text-teal-600', link: "https://www.instagram.com/mealversity.in?igsh=MWtwNHlsaGszemcyZA==" },
+                    { icon: Linkedin, color: 'hover:text-teal-600', link: "https://www.linkedin.com/in/meal-versity-720aa7377/" }
                   ].map((social, index) => (
                     <a href={social.link} target='_blank' key={index}>
-                    <div
-                      
-                      className={`p-3 bg-gradient-to-br from-white/60 to-white/40 backdrop-blur-md rounded-full border border-slate-300/50 ${social.color} text-slate-600 hover:scale-110 transition-all duration-300 cursor-pointer group shadow-md`}
-                    >
-                      <social.icon size={20} className="group-hover:animate-bounce" />
-                    </div>
+                      <div
+
+                        className={`p-3 bg-gradient-to-br from-white/60 to-white/40 backdrop-blur-md rounded-full border border-slate-300/50 ${social.color} text-slate-600 hover:scale-110 transition-all duration-300 cursor-pointer group shadow-md`}
+                      >
+                        <social.icon size={20} className="group-hover:animate-bounce" />
+                      </div>
                     </a>
                   ))}
                 </div>
@@ -103,14 +108,34 @@ export default function MealversityFooter() {
                   Quick Links
                 </h4>
                 <ul className="space-y-3">
-                  {['Menu', 'Pricing', 'About Us', 'How It Works', 'FAQ', 'Contact'].map((link, index) => (
+                  {[{
+                    l_name: 'Menu',
+                    link: '#app'
+                  },
+                  {
+                    l_name: 'Pricing',
+                    link: '#plan'
+                  }, {
+                    l_name: 'About Us',
+                    link: '#ourteam'
+                  }, {
+                    l_name: 'FAQ',
+                    link: '#FAQ'
+                  }, {
+                    l_name: 'Contact',
+                    link: '#contactus'
+                  }].map((data, index) => (
                     <li key={index}>
-                      <a 
-                        href="#" 
+                      <a
+                        onClick={(e) => {
+                          e.preventDefault(); // Prevent default anchor jump
+                          handleclick(data.link);
+                        }}
+                        href={data.link}
                         className="text-slate-600 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-teal-600 hover:to-teal-700 transition-all duration-300 flex items-center group"
                       >
                         <div className="w-2 h-2 bg-gradient-to-r from-teal-500 to-teal-600 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
-                        {link}
+                        {data.l_name}
                       </a>
                     </li>
                   ))}
@@ -149,7 +174,7 @@ export default function MealversityFooter() {
                 <p className="text-slate-600 mb-6">
                   Subscribe to get special offers, free giveaways, and updates on new menu items!
                 </p>
-                
+
                 <div className="space-y-4">
                   <div className="relative">
                     <input
@@ -161,7 +186,7 @@ export default function MealversityFooter() {
                     />
                     <Mail className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-500 w-5 h-5" />
                   </div>
-                  
+
                   <button
                     onClick={handleSubscribe}
                     className="w-full py-3 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-teal-500/25 transform hover:scale-105 transition-all duration-300"
@@ -189,13 +214,13 @@ export default function MealversityFooter() {
                 <Heart className="text-red-500 w-5 h-5 animate-pulse" />
                 <span className="text-slate-200">by AIO</span>
               </div>
-              
+
               <div className="text-center">
                 <p className="text-slate-200">
                   © 2025 Mealversity. All rights reserved.
                 </p>
               </div>
-              
+
               <div className="flex space-x-6">
                 <a href="#" className="text-slate-300 hover:text-white transition-colors duration-300 text-sm">
                   Privacy Policy
@@ -209,7 +234,7 @@ export default function MealversityFooter() {
         </div>
       </div>
 
-    
+
     </footer>
   )
 }

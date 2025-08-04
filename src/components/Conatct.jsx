@@ -70,7 +70,7 @@ const AppComingSoonContact = () => {
   };
 
   return (
-    <div className="py-20 px-4 bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300">
+    <div id='app' className="py-20 px-4 bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300">
       <div className="max-w-7xl mx-auto">
 
         {/* App Coming Soon Section */}
@@ -157,7 +157,7 @@ const AppComingSoonContact = () => {
           <FAQSection/>
         </div>
         {/* Contact Form Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div id='contactus' className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
           {/* Contact Information */}
           <div className="space-y-8">
