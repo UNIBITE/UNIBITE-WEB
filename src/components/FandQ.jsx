@@ -80,7 +80,7 @@ const FAQSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-cyan-50 py-12 px-4" style={{borderRadius:"29px"}}>
+    <div id='FAQ' className="min-h-screen bg-gradient-to-br from-slate-50 to-cyan-50 py-12 px-4" style={{borderRadius:"29px"}}>
       <div className="max-w-4xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
