@@ -209,11 +209,11 @@ const handleclick = (id) => {
         <div className="bg-slate-600/80 backdrop-blur-md border-t border-slate-500/30">
           <div className="max-w-7xl mx-auto px-4 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="flex items-center space-x-2">
+             <a href="https://skrijwan.vercel.app"><div className="flex items-center space-x-2">
                 <span className="text-slate-200">Made with</span>
                 <Heart className="text-red-500 w-5 h-5 animate-pulse" />
                 <span className="text-slate-200">by AIO</span>
-              </div>
+              </div></a> 
 
               <div className="text-center">
                 <p className="text-slate-200">
